@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "arroz",
+    "description": "arroz integral",
+    "price": 1500,
+    "thumbnail": "https://thisisatest.com",
+    "code": 4455,
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "title": "fideos",
+    "description": "fideos integrales",
+    "price": 2000,
+    "thumbnail": "https://thisisatest.com",
+    "code": 4566,
+    "stock": 45
+  }
+]
