@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "title": "arroz",
-    "description": "arroz integral",
-    "price": 1500,
-    "thumbnail": "https://thisisatest.com",
+    "title": "EL SEÑOR DE LOS ANILLOS: RIVENDEL",
+    "description": "Rinde homenaje a la emblemática saga de películas con el nuevo y extraordinario set El Señor de los Anillos: Rivendel de LEGO® Icons. Con 15 minifiguras de personajes y detalles de gran autenticidad que aparecen conforme construyes, este fantástico set te permite recrear tus escenas favoritas e interpretar nuevas historias.",
+    "price": 150,
+    "thumbnail": "https://www.lego.com/cdn/cs/set/assets/bltec012c948c003fba/10316_alt16.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
     "code": 4455,
     "stock": 20
   },
   {
     "id": 2,
-    "title": "fideos",
-    "description": "fideos integrales",
+    "title": "Aragorn™ y Arwen",
+    "description": "Evoca la escena de la boda de Aragorn™ y Arwen™ en El Señor de los Anillos: El Retorno del Rey con estas figuras LEGO® BrickHeadz™ coleccionables (40632).",
     "price": 2000,
-    "thumbnail": "https://thisisatest.com",
+    "thumbnail": "https://www.lego.com/cdn/cs/set/assets/blta84e06d436db4688/40632.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
     "code": 4566,
     "stock": 45
   }

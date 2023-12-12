@@ -101,7 +101,7 @@ class ProductManager {
       const datos = await fs.promises.readFile(this.path, "utf-8");
       const parseData = JSON.parse(datos);
       const product = parseData.find((prod) => {
-        prod.id === id;
+        return prod.id === Number(id);
       });
       return product;
     } catch (error) {
@@ -116,9 +116,9 @@ class ProductManager {
       const datos = await fs.promises.readFile(this.path, "utf-8");
       const parseData = JSON.parse(datos);
       const prod = parseData.find((prod) => {
-        return prod.id === id;
+        return prod.id === Number(id);
       });
-      if (prod.id === id) {
+      if (prod.id === Number(id)) {
         prod.title === prod.title ?? prod.title;
         prod.description === prod.description ?? prod.description;
         prod.price === prod.price ?? prod.price;
@@ -138,7 +138,7 @@ class ProductManager {
     const datos = await fs.promises.readFile(this.path, "utf-8");
     const parseData = JSON.parse(datos);
     const index = parseData.findIndex((prod) => {
-      prod.id === id;
+      prod.id === Number(id);
     });
     if (index >= 0) {
       parseData.splice(index, 1);
@@ -158,42 +158,32 @@ const test = async () => {
   console.log(datas);
 
   const prod1 = {
-    title: "arroz",
-    description: "arroz integral",
-    price: 1500,
-    thumbnail: "https://thisisatest.com",
+    title: "EL SEÑOR DE LOS ANILLOS: RIVENDEL",
+    description:
+      "Rinde homenaje a la emblemática saga de películas con el nuevo y extraordinario set El Señor de los Anillos: Rivendel de LEGO® Icons. Con 15 minifiguras de personajes y detalles de gran autenticidad que aparecen conforme construyes, este fantástico set te permite recrear tus escenas favoritas e interpretar nuevas historias.",
+    price: 150,
+    thumbnail:
+      "https://www.lego.com/cdn/cs/set/assets/bltec012c948c003fba/10316_alt16.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
     code: 4455,
     stock: 20,
   };
   const prod2 = {
-    title: "fideos",
-    description: "fideos integrales",
+    title: "Aragorn™ y Arwen",
+    description:
+      "Evoca la escena de la boda de Aragorn™ y Arwen™ en El Señor de los Anillos: El Retorno del Rey con estas figuras LEGO® BrickHeadz™ coleccionables (40632).",
     price: 2000,
-    thumbnail: "https://thisisatest.com",
+    thumbnail:
+      "https://www.lego.com/cdn/cs/set/assets/blta84e06d436db4688/40632.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
     code: 4566,
     stock: 45,
   };
-  const prod3 = {
-    title: "poroto",
-    description: "porotos rojos",
-    price: 4000,
-    thumbnail: "https://thisisatest.com",
-    code: 4563,
-    stock: 50,
-  };
-  const prod4 = {
-    title: "leche",
-    description: "leche completa",
-    price: 3000,
-    thumbnail: "https://thisisatest.com",
-    code: 2345,
-    stock: 70,
-  };
 
-  await productmanager.addProducts(prod1);
-  await productmanager.addProducts(prod2);
-  datas = await productmanager.getProducts();
-  console.log(datas);
+  // await productmanager.addProducts(prod1);
+  // await productmanager.addProducts(prod2);
+  // datas = await productmanager.getProducts();
+  // console.log(datas);
 };
+
+test();
 
 export default ProductManager;
