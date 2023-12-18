@@ -16,5 +16,14 @@
     "thumbnail": "https://www.lego.com/cdn/cs/set/assets/blta84e06d436db4688/40632.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
     "code": 4566,
     "stock": 45
+  },
+  {
+    "id": 3,
+    "title": "Fortaleza Eldorado",
+    "description": "Vuelven los bucaneros y los chaquetas azules para rendir homenaje a una leyenda de los piratas LEGO® con el set Fortaleza tropical de LEGO Icons.",
+    "price": 4000,
+    "thumbnail": "https://www.lego.com/es-ar/product/eldorado-fortress-10320?icmp=HP-SHCC-Standard-IC_CC_Block_10320_Project_Reboot_Product_HP-PR-IC-2B0O6890GD",
+    "code": 7895,
+    "stock": 15
   }
 ]

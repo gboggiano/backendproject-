@@ -38,4 +38,30 @@ productsRouter.get("/:pid", async (req, res) => {
   }
 });
 
+// productsRouter.delete("/:pid", async (req, res) => {
+//   try {
+//     const pid = req.params.pid;
+//     const data = await fs.promises.readFile(this.path, "utf-8");
+//     const products = JSON.parse(data);
+//     const updatedProducts = products.filter(
+//       (product) => product.id !== Number(pid)
+//     );
+//     await fs.promises.writeFile(this.path, JSON.stringify(updatedProducts));
+//     res.send({ message: "Producto eliminado" });
+//   } catch (error) {
+//     res.status(500).send({ message: "Error al eliminar producto" });
+//   }
+// });
+
+// productsRouter.post("/", async (req, res) => {
+//   const product = req.body;
+//   try {
+//     await productmanager.addProduct(product);
+//     res.status(201).send({ message: "Producto creado exitosamente" });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send({ message: "Error al crear producto" });
+//   }
+// });
+
 export default productsRouter;
