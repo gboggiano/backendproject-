@@ -1,5 +1,9 @@
 import { Router } from "express";
 import ProductManager from "../ProductManager.js";
+//***** */
+import io from "../app.js";
+//**** */
+
 const productmanager = new ProductManager("./products.json");
 
 const productsRouter = Router();
@@ -38,30 +42,30 @@ productsRouter.get("/:pid", async (req, res) => {
   }
 });
 
-// productsRouter.delete("/:pid", async (req, res) => {
-//   try {
-//     const pid = req.params.pid;
-//     const data = await fs.promises.readFile(this.path, "utf-8");
-//     const products = JSON.parse(data);
-//     const updatedProducts = products.filter(
-//       (product) => product.id !== Number(pid)
-//     );
-//     await fs.promises.writeFile(this.path, JSON.stringify(updatedProducts));
-//     res.send({ message: "Producto eliminado" });
-//   } catch (error) {
-//     res.status(500).send({ message: "Error al eliminar producto" });
-//   }
-// });
+//********************** */
+productsRouter.post("/", async (req, res) => {
+  try {
+    const product = await productmanager.addProduct(req.body);
+    if (product) {
+      res.send({ product: product });
+      // Emitir un evento de socket.io al crear un nuevo producto
+      io.emit("new product", product);
+    } else {
+      res.status(400).send({ message: "Error al crear el producto" });
+    }
+  } catch (error) {
+    res.status(500).send({ message: "Error al guardar el producto" });
+  }
+});
+/// ******** ruta GET que renderice la vista
 
-// productsRouter.post("/", async (req, res) => {
-//   const product = req.body;
-//   try {
-//     await productmanager.addProduct(product);
-//     res.status(201).send({ message: "Producto creado exitosamente" });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({ message: "Error al crear producto" });
-//   }
-// });
+productsRouter.get("/home", async (req, res) => {
+  // Obtener el array de productos usando el método getProducts
+  const products = await productmanager.getProducts();
+  // Renderizar la vista home.handlebars con el array de productos como datos
+  res.render("home", { products });
+});
+
+///
 
 export default productsRouter;
